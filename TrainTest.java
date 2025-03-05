@@ -1,17 +1,29 @@
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class TrainTest {
 
+    //Atributes
+    Engine eng;
+
+    //Before Methods
+    @Before
+    public void setup(){
+       this.eng = new Engine(FuelType.ELECTRIC, 50, 95);
+   }
+
     // Engine Tests
     @Test
     public void testEngineConstructor() {
-        fail();
+        assertEquals(FuelType.ELECTRIC,eng.getFuelType());
+        //fuel level when private?
     }
 
     @Test
     public void testEngineGo() {
-        fail();
+        assertTrue(eng.go());
     }
 
     // Car Tests
